@@ -39,3 +39,11 @@ async delete(req, res) {
     }satch (error) {
     }
 }
+
+export{
+getAll,
+getById,
+post,
+patch,
+delete
+}

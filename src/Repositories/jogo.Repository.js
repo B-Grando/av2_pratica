@@ -1,5 +1,5 @@
 import knex from "knex";
-import { Knex } from "../database/knex.js";
+import { knex } from "../database/knex.js";
 
 async getAll() {
     const jogos = await knex('jogos')
@@ -9,25 +9,34 @@ async getAll() {
 
 async getById() {
     const jogos = await knex('jogos')
-        .select("*").returning("*");
+        .where({id});
     return jogos;
 }
 
 async post() {
     const jogos = await knex('jogos')
-        .select("*").returning("*");
+        .insert(jogos)
     return jogos;
 }
 
 async patch() {
     const jogos = await knex('jogos')
-        .select("*").returning("*");
+        .where({id})
+        .update
     return jogos;
 }
 
 async delete() {
     const jogos = await knex('jogos')
-        .select("*").returning("*");
+        .where({id})
+        .del()
     return jogos;
 }
 
+export {
+    getAll,
+    getById,
+    post,
+    patch,
+    delete
+}

@@ -26,3 +26,11 @@ async delete() {
 }
 
 export const jogoServices = new jogoServices();
+
+export{
+    getAll,
+    getById,
+    post,
+    patch,
+    delete
+}
